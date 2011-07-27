@@ -1,0 +1,1 @@
+Before { DatabaseCleaner[:mongoid].clean_with :truncation }
