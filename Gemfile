@@ -1,14 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.beta1'
+gem 'rails', '3.1.0.rc2'
 
 gem 'bson_ext'
 gem 'mongoid', :git => 'git://github.com/mongoid/mongoid.git'
 
 gem 'devise'
 gem 'devise_aes_encryptable', :git => 'git://github.com/chicks/devise_aes_encryptable.git'
-
-gem 'sprockets', '2.0.0.beta.2'
 
 # Asset template engines
 gem 'sass'
