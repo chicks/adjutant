@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-  def create
+  def bok_create
     resource          = User.new(params[:user]) 
     resource.employee = Employee.where(name: resource.name).first
     if resource.save

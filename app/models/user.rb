@@ -10,10 +10,7 @@ class User
   validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
-  
-  belongs_to :employee
-  validates_presence_of :employee_id
-  
+    
   def encrypt(string)
     Devise::Encryptors::Aes256.digest(string, 10, Devise::Encryptors::Aes256.salt, Devise.pepper)
   end
