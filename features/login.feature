@@ -13,4 +13,5 @@ Scenario: login a user
     | Password              | letmein            | 
   And press "Sign in"
   Then I should see "Hello Dwight"
+  And  I should see "My Identities"
 

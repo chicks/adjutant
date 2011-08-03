@@ -6,4 +6,5 @@ Fabricator(:dshrute, :from => :user) do
   last_name  "Shrute"
   email      "dshrute@dm.com"
   password   "letmein"
+  contexts   [Fabricate(:dm)]
 end
