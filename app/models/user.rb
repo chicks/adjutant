@@ -5,12 +5,17 @@ class User
   devise :database_authenticatable, :encryptable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  field :name
+  field :first_name
+  field :last_name
 
-  validates_presence_of :name
-  validates_uniqueness_of :name, :email, :case_sensitive => false
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  validates_presence_of :first_name, :last_name
+  validates_uniqueness_of :email, :case_sensitive => false
+  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me
     
+  def name
+    first_name + " " + last_name
+  end
+  
   def encrypt(string)
     Devise::Encryptors::Aes256.digest(string, 10, Devise::Encryptors::Aes256.salt, Devise.pepper)
   end
