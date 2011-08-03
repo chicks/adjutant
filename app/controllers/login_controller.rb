@@ -1,4 +1,3 @@
-
 class LoginController < Devise::SessionsController
-  layout false
+  layout "login"
 end
