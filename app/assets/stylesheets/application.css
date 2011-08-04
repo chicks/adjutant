@@ -74,9 +74,18 @@ header, #content {
     margin: 0 auto;
 }
 
+#headerDiv {
+    width: 500px;
+    margin: 200px auto 10px auto;
+}
+
 #loginDiv {
     width: 500px;
     margin: 0 auto;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 0px 5px #000;
 }
 
 /* Fonts */
