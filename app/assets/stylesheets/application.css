@@ -3,8 +3,6 @@
  *= require_self
  *= require_tree . 
 */
-
-
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -62,10 +60,16 @@ body {
     font-family: "droid-sans";
     color: #eee;
     background-color: #303030;
+    font-size: 13px;
 }
 
 a {
     text-decoration: none;
+}
+
+input {
+    border: 1px solid #ccc;
+    padding: 2px;
 }
 
 /* Containers */
@@ -82,10 +86,15 @@ header, #content {
 #loginDiv {
     width: 500px;
     margin: 0 auto;
-    background-color: #eee;
-    border-radius: 5px;
-    padding: 20px;
+    color: #121212;
+    background-color: #fff;
+    padding: 10px;
     box-shadow: 0px 0px 5px #000;
+}
+
+.wrap {
+    padding-bottom: 10px;
+    border-bottom: 3px solid #1f5d88;
 }
 
 /* Fonts */
@@ -99,6 +108,7 @@ header, #content {
     font-size:25px;
     font-family: "lucida sans unicode" "lucida grande";
     font-weight: bold;
+    padding-left: 10px;
 }
 
 #logo a {

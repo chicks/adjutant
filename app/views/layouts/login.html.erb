@@ -7,6 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= yield %>
+    <div id="headerDiv">
+        <%= image_tag "logo.png", {:height => 20} %><span id="logo"><a href="#">Adjutant</a></span>
+    </div>
+    <div id="loginDiv">
+        <div class="wrap">
+            <%= yield %>            
+        </div>
+    </div>
 </body>
 </html>
