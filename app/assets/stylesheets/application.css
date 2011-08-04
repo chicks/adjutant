@@ -59,7 +59,7 @@ Adjutant App css
 */
 
 body {
-    font-family: "droidsans";
+    font-family: "droid-sans";
     color: #eee;
     background-color: #303030;
 }
@@ -90,8 +90,8 @@ header, #content {
 
 /* Fonts */
 @font-face {
-    font-family: "droidsans";
-    src: (/assets/fonts/DroidSans.ttf);
+    font-family: "droid-sans";
+    src: url(/assets/DroidSans.ttf);
 }
 
 /* Misc */
