@@ -8,14 +8,13 @@ class User
   field :first_name
   field :last_name
   
-  has_and_belongs_to_many :contexts
   embeds_many :identities
 
   validates_presence_of :first_name, :last_name
   validates_uniqueness_of :email, :case_sensitive => false
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me
   
-  before_create :initialize_first_context
+  #before_create :initialize_primary_context
     
   def name
     first_name + " " + last_name
@@ -25,8 +24,8 @@ class User
     Devise::Encryptors::Aes256.digest(string, 10, Devise::Encryptors::Aes256.salt, Devise.pepper)
   end
   
-  def initialize_first_context
-    self.contexts << Context.create(name: "My Identities")
-  end
+  #def initialize_primary_context
+  #  self.contexts << Context.create(name: "My Identities")
+  #end
   
 end

@@ -1,5 +1,7 @@
 <p>Hello <%= current_user.first_name %></p>
 
-<% current_user.contexts.each do |c| %>
-  <h2><%= c.name %></h2>
+
+
+<% current_user.identities.each do |i| %>
+  <h2><%= i.user_name %></h2><p><%= i.context %></p>
 <% end %>
