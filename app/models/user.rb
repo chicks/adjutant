@@ -8,7 +8,7 @@ class User
   field :first_name
   field :last_name
   
-  embeds_many :identities
+  has_many :identities
 
   validates_presence_of :first_name, :last_name
   validates_uniqueness_of :email, :case_sensitive => false
@@ -22,6 +22,15 @@ class User
   
   def encrypt(string)
     Devise::Encryptors::Aes256.digest(string, 10, Devise::Encryptors::Aes256.salt, Devise.pepper)
+  end
+  
+  def flatten_identities
+    ids = {}
+    identities.each do |i|
+      ids[i.context.name] ||= {i.user_name => []}
+      ids[i.context.name][i.user_name] << {provider: i.identity_provider.name}
+    end
+    ids
   end
   
   #def initialize_primary_context

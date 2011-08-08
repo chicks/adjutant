@@ -5,4 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Daley', city: cities.first)
-Fabricate(:dshrute)
+dshrute_dm_ad = Fabricate(:dshrute_dm_ad)

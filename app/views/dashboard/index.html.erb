@@ -1,7 +1,3 @@
 <p>Hello <%= current_user.first_name %></p>
 
-
-
-<% current_user.identities.each do |i| %>
-  <h2><%= i.user_name %></h2><p><%= i.context %></p>
-<% end %>
+<%= draw_identity_map_for(current_user) %>
