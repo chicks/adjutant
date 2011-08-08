@@ -58,18 +58,28 @@ Adjutant App css
 
 body {
     font-family: "droid-sans";
-    color: black;
-    background-color: #efeef3;
-    font-size: 13px;
+    color: #444;
+    background-color: #cfcfcf;
+    font-size: 14px;
 }
 
-a {
+a:link {
+    color: #666;
     text-decoration: none;
+}
+
+a:hover {
+    color: #999;
+}
+
+a:visited {
+    color: #666;
 }
 
 h1 {
     font-family: "droid-sans-bold";
-    font-size: 26px;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 h2 {
@@ -77,7 +87,10 @@ h2 {
 }
 
 h3 {
-    
+    font-samily: "droid-sans-bold";
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
 }
 
 input {
@@ -92,27 +105,31 @@ header, #content {
 }
 
 .wrap {
-    padding-bottom: 10px;
-    border-bottom: 3px solid #1f5d88;
+    padding-bottom: 30px;
+    border-bottom: 3px solid #999;
 }
 
 /* LOGIN Styling */
 #headerDiv {
-    width: 400px;
-    margin: 200px auto 10px auto;
+    width: 240px;
+    margin: 200px auto 20px auto;
 }
 
 #loginDiv {
-    width: 400px;
+    width: 240px;
     margin: 0 auto;
-    color: #121212;
     background-color: #fff;
     padding: 10px;
-    box-shadow: 0px 2px 4px #666;
+    box-shadow: 0px 2px 4px #888;
 }
 
-#loginDiv input[type="text"] {
-    width: 390px;
+#loginDiv input {
+    font-size: 15px;
+    margin: 6px 0 10px 0;
+}
+
+#loginDiv form {
+    margin: 20px 0;
 }
 
 /* Fonts */
@@ -128,10 +145,9 @@ header, #content {
 
 /* Misc */
 #logo {
-    font-size:25px;
-    font-family: "lucida sans unicode" "lucida grande";
+    font-size:36px;
+    font-family: "droid-sans-bold" "lucida sans unicode" "lucida grande";
     font-weight: bold;
-    padding-left: 10px;
 }
 
 #logo a {
