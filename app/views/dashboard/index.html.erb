@@ -1,20 +1,35 @@
-<p>Hello <%= current_user.first_name %></p>
+<div class="grid_8 alpha">
+    <div class="pane">
+        <div class="wrap">
+            <p>Hello <%= current_user.first_name %></p>
 
-<% current_user.flatten_identities.each_pair do |context, entry| -%>
-<h1><%= context %></h1>
-<ul>
-  <% entry.each_pair do |user_name, accounts| -%>
-  <li><%= user_name %></li>
-  <li>
-    <ul>
-      <% accounts.each do |account| -%>
-      <li>
-        <span><%= account[:provider] %></span>
-        <span>Last Sync: <%= time_ago_in_words(account[:last_sync]) %> ago</span>
-      </li>
-      <% end -%>
-    </ul>
-    <% end -%>
-  </li>
-</ul>
-<% end -%>
+            <% current_user.flatten_identities.each_pair do |context, entry| -%>
+            <h1><%= context %></h1>
+            <ul>
+              <% entry.each_pair do |user_name, accounts| -%>
+              <li><%= user_name %></li>
+              <li>
+                <ul>
+                  <% accounts.each do |account| -%>
+                  <li>
+                    <span><%= account[:provider] %></span>
+                    <span>Last Sync: <%= time_ago_in_words(account[:last_sync]) %> ago</span>
+                  </li>
+                  <% end -%>
+                </ul>
+                <% end -%>
+              </li>
+            </ul>
+            <% end -%>
+        </div>
+    </div>
+</div>
+
+<div class="grid_4 omega">
+    <div class="pane">
+        <div class="wrap">
+            <h3>Actions</h3>
+        </div>
+    </div>
+</div>
+
