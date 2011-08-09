@@ -28,7 +28,7 @@ class User
     ids = {}
     identities.each do |i|
       ids[i.context.name] ||= {i.user_name => []}
-      ids[i.context.name][i.user_name] << {provider: i.identity_provider.name}
+      ids[i.context.name][i.user_name] << {provider: i.identity_provider.name, last_sync: i.last_sync}
     end
     ids
   end
