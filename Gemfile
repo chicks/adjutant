@@ -29,4 +29,5 @@ group :development, :test do
   gem 'mongoid-rspec'
   gem 'rspec-rails'
   gem 'fabrication'
+  gem 'factory_girl_rails'
 end
