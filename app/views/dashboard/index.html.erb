@@ -1,39 +1,49 @@
 <div class="grid_8 alpha">
-    <div class="pane">
-        <div class="wrap">
-            <p>Hello <%= current_user.first_name %></p>
-
-            <% current_user.flatten_identities.each_pair do |context, entry| -%>
-            <h1><%= context %></h1>
-            <ul>
-              <% entry.each_pair do |user_name, accounts| -%>
-              <li><%= user_name %></li>
-              <li>
-                <ul>
-                  <% accounts.each do |account| -%>
-                  <li>
-                    <span><%= account[:provider] %></span>
-                    <span>Last Sync: <%= time_ago_in_words(account[:last_sync]) %> ago</span>
-                  </li>
-                  <% end -%>
-                </ul>
-                <% end -%>
-              </li>
-            </ul>
-            <% end -%>
-        </div>
+  <div class="pane">
+    <div class="wrap">
+      <article class="identity_map">
+        <% @identity_map.each_pair do |context, identities| -%>
+        <h2 class="context"><%= context %></h2>
+        <nav class="actions">
+          <%= link_to "add", new_identities_path %>
+        </nav>
+        <br />
+          <table class="identities">
+            <thead>
+              <tr>
+                <th>User Name</th>
+                <th>Service</th>
+                <th>Password Linked?</th>
+                <th>Last Sync</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% identities.each do |identity| -%>
+              <tr>
+                <td class="user_name"><%= identity.user_name %></td>
+                <td class="provider" ><%= identity.provider %></td>
+                <td class="sync_with">Global</td>                  
+                <td class="last_sync"><%= time_ago_in_words(identity.last_sync) %> ago</td>
+                <td><%= link_to "sync", sync_identities_path(identity.id) %></td>
+              </tr>
+              <% end -%>
+            </tbody>
+          </table>          
+        <% end -%>
+      </article>
     </div>
+  </div>
 </div>
 
 <div class="grid_4 omega">
-    <div class="pane">
-        <div class="wrap">
-            <h3>Actions</h3>
-            <ul class="action_menu">
-                <li>Sign Out</li>
-                <li>Account Options</li>
-            </ul>
-        </div>
+  <div class="pane">
+    <div class="wrap">
+      <h3>Actions</h3>
+      <ul class="action_menu">
+        <li>Sign Out</li>
+        <li>Account Options</li>
+      </ul>
     </div>
+  </div>
 </div>
 

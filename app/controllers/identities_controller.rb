@@ -3,8 +3,9 @@ class IdentitiesController < ApplicationController
   
   def sync
     @identity = Identity.find(params[:id])
-    Resque.enqueue(Identity, @identity.id)
-    render :text => "Added #{@identity.user_name} to sync queue."
+    @password = current_user.decrypted_password
+    Resque.enqueue(Identity, @identity.id, @password)
+    render :text => "Queued #{@identity.provider} password sync: #{@identity.user_name} / #{@password}."
   end
   
 end

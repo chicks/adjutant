@@ -1,0 +1,43 @@
+.identity_map {
+  .context {
+    font-size: 120%;
+    float: left;
+  }
+  
+  .actions {
+    display: inline;
+    
+    float: right;
+  }
+  
+  .user_name {
+    font-family: Courier;
+  }
+  
+  .identities {
+    margin: 10px;
+    paddig: 5px;
+    width: 90%;
+    
+    th {
+      text-align: left;
+      font-family: "droid-sans-bold";
+      line-height: 120%;
+      border-bottom: 1px solid #444;
+    }
+    
+    td {
+      padding: 2px;
+    }
+    
+    .identity {
+      padding: 3px;
+    }
+    
+    .provider {
+    }
+    
+    .last_sync {
+    }
+  }
+}

@@ -24,11 +24,15 @@ class User
     Devise::Encryptors::Aes256.digest(string, 10, Devise::Encryptors::Aes256.salt, Devise.pepper)
   end
   
+  def decrypted_password
+    ::Devise::Encryptors::Aes256.decrypt(encrypted_password, Devise.pepper)
+  end
+  
   def flatten_identities
     ids = {}
     identities.each do |i|
-      ids[i.context.name] ||= {i.user_name => []}
-      ids[i.context.name][i.user_name] << {provider: i.identity_provider.name, last_sync: i.last_sync}
+      ids[i.context.name] ||= []
+      ids[i.context.name] << i
     end
     ids
   end
