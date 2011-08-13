@@ -1,12 +1,35 @@
 .identity_map {
+  h1 {
+    float: left;
+  }
+
+  p {
+    margin: 5px 0 7px 0;
+    border-radius: 5px;
+    border: 1px solid #E0E0E0;
+    padding: 5px 5px 5px 10px;
+    background-color: #F0F0F0;
+    line-height: 120%;
+  }
+  
+  a.button {
+    line-height: 120%;
+    padding: 5px 10px; 
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    text-shadow: -1px -1px 0 #333;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    background: url('/assets/black.gif') 0 0 repeat-x;
+  }
+
   .context {
     font-size: 120%;
-    float: left;
   }
   
   .actions {
     display: inline;
-    
     float: right;
   }
   
@@ -23,7 +46,8 @@
       text-align: left;
       font-family: "droid-sans-bold";
       line-height: 120%;
-      border-bottom: 1px solid #444;
+      #border-bottom: 1px solid #444;
+      text-decoration: underline;
     }
     
     td {
