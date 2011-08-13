@@ -13,7 +13,9 @@
         <a href="/help/password_sync">Learn more...</a>
       </p>
       <% @identity_map.each_pair do |context, identities| -%>
-      <h2 class="context"><%= context %></h2>
+      <ul class="context">
+        <li id="current_context"><%= context %></li>
+      </ul>
         <table class="identities">
           <thead>
             <tr>
