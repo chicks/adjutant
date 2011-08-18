@@ -11,6 +11,9 @@ gem 'mongoid', :git => 'git://github.com/mongoid/mongoid.git'
 gem 'devise'
 gem 'devise_aes_encryptable', :git => 'git://github.com/chicks/devise_aes_encryptable.git'
 
+# Adapters
+gem 'net-ldap'
+
 # Asset template engines
 gem 'sass'
 gem 'coffee-script'

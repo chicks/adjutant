@@ -164,3 +164,12 @@ header, #content {
 .action_menu {
     font-size: 12px;
 }
+
+p.help {
+  margin: 5px 0 7px 0;
+  border-radius: 2px;
+  border: 1px solid #ececec;
+  padding: 5px 5px 5px 10px;
+  background-color: #fcfcfc;
+  line-height: 120%;
+}

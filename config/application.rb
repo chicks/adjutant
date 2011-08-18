@@ -58,7 +58,7 @@ module Adjutant
 
     # Enable the asset pipeline
     config.assets.enabled = true
-    config.assets.paths << "#{Rails.root}/app/assets/fonts"
+    #config.assets.paths << "#{Rails.root}/app/assets/fonts"
     
     config.mongoid.preload_models = true
   end

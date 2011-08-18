@@ -6,7 +6,7 @@
         <%= link_to "New Identity", new_identities_path, id: "add_identity", class: "button" %>
       </nav>
       <div class="clear"></div>
-      <p>
+      <p class="help">
         Tired of manually changing your passwords?  Adjutant can change them for you!  Add a new 
         <a href="/help/identity_provider">identity provider</a> and <a href="/help/link_a_password">link it to a password</a>.  
         Changing your password in Adjutant will update all <a href="/help/identity">identities</a> associated with it.  
@@ -23,11 +23,12 @@
               <th>Service</th>
               <th>Password Linked?</th>
               <th>Last Sync</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             <% identities.each do |identity| -%>
-            <tr>
+            <tr class=<%= cycle('odd_row', 'even_row')%>>
               <td class="user_name"><%= identity.user_name %></td>
               <td class="provider" ><%= identity.provider %></td>
               <td class="sync_with">Global</td>                  

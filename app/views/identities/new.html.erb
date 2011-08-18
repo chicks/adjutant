@@ -1,0 +1,18 @@
+<div class="grid_12 alpha pane">
+  <div class="wrap">
+    <section id="new_identity">
+      <h1>New Identity</h1>
+      <p class="help">
+        Creating a new Identity is simple!  Select an Provider from the list below,
+        enter the configuration details and your credentials.  
+      </p>
+    <%= form_for :identity do |f| %>
+      <h3><%= f.label "Provider" %></h3>
+        <%= select_tag(:identity_provider, options_for_select(@identity_providers)) %>
+      <h3><%= f.label "" %></h3>
+      <h3><%= f.label :user_name %></h3>
+        <%= f.text_field :user_name %>      
+    <% end %>
+    </section>
+  </div>
+</div>
