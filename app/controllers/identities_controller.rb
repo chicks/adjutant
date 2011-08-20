@@ -1,6 +1,16 @@
 class IdentitiesController < ApplicationController
   before_filter :authenticate_user!
   
+  def show
+    @identities = current_user.identities
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { 
+        render json: @identities
+      }
+    end
+  end
+  
   def new
     @identity = Identity.new
     @identity_provider = IdentityProvider.new

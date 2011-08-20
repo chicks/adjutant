@@ -3,4 +3,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require ./lib/underscore
+//= require ./lib/backbone
+//= require_tree ./models
+//= require_tree ./routers
+//= require_tree ./views

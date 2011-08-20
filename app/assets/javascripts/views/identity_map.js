@@ -9,3 +9,4 @@ toggle_new_identity_form = function() {
 	$(button).text("New Identity");
   }
 }
+
