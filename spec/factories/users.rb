@@ -7,7 +7,7 @@ FactoryGirl.define do
   end
   factory :identity do
     user_name   'dshrute'
-    last_sync   18.days.ago
+    sync_time   18.days.ago
   end
   factory :context do
     name        'Dunder Mifflin'

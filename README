@@ -5,8 +5,18 @@ IT Provisioning that doesn't suck
 == Installation
 
 Install Mongo
-
+    $ brew install mongo
+    
 Install Redis
     $ brew install redis 
+
+== Development and Testing
+
+Start Rails
+    $ rails s
+
+Start Redis
     $ redis-server /usr/local/etc/redis.conf
-  You now have a Redis daemon running on 6379.
+
+Start the Resque Workers
+    $ rake resque:work

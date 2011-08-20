@@ -44,8 +44,9 @@
               <td class="user_name"><%= identity.user_name %></td>
               <td class="provider" ><%= identity.provider %></td>
               <td class="sync_with">Global</td>                  
-              <td class="last_sync"><%= time_ago_in_words(identity.last_sync) %> ago</td>
-              <td><%= link_to "sync", sync_identities_path(identity.id) %></td>
+              <td class="sync_time"><%= time_ago_in_words(identity.sync_time) %> ago</td>
+              <td><%= link_to "sync", sync_identities_path(identity.id), :method => 'get',
+              :remote => true %></td>
             </tr>
             <% end -%>
           </tbody>
