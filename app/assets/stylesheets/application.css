@@ -173,3 +173,7 @@ p.help {
   background-color: #fcfcfc;
   line-height: 120%;
 }
+
+.hidden {
+  display: none;
+}

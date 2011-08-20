@@ -1,9 +1,15 @@
+<script>
+  $(document).ready(function() {
+    $('#add_identity_button').click(toggle_new_identity_form);
+  })
+</script>
+
 <div class="grid_12 alpha pane">
   <div class="wrap">
     <article class="identity_map">
       <h1>Identities and Passwords</h1>
       <nav class="actions">
-        <%= link_to "New Identity", new_identities_path, id: "add_identity", class: "button" %>
+        <%= link_to "New Identity", "#new_identity", id: "add_identity_button", class: "button" %>
       </nav>
       <div class="clear"></div>
       <p class="help">
@@ -12,6 +18,12 @@
         Changing your password in Adjutant will update all <a href="/help/identity">identities</a> associated with it.  
         <a href="/help/password_sync">Learn more...</a>
       </p>
+      <section id="new_identity_form" class="hidden">
+        <%= form_for :identity do |f| %>
+          <span><%= f.label "Service" %></span><%= select_tag(:identity_provider, options_for_select(@identity_providers)) %>
+          <span><%= f.label :user_name %></span><%= f.text_field :user_name %>      
+        <% end %>
+      </section>      
       <% @identity_map.each_pair do |context, identities| -%>
       <ul class="context">
         <li id="current_context"><%= context %></li>
