@@ -1,10 +1,10 @@
 <script>
   $(document).ready(function() {
-    $('#add_identity_button').click(toggle_new_identity_form);
-  })
+      AdjutantApp = new AA.views.Dashboard({el: $("#dashboard")});
+  });
 </script>
 
-<div class="grid_12 alpha pane">
+<div class="grid_12 alpha pane" id="dashboard">
   <div class="wrap">
     <article class="identity_map">
       <h1>Identities and Passwords</h1>

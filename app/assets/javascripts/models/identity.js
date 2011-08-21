@@ -1,7 +1,9 @@
-var Identity = Backbone.Model.extend({
-	url : function() {
-    var base = 'identities';
-    if (this.isNew()) return base;
-      return base + (base.charAt(base.length - 1) == '/' ? '' : '/') + this.id;
-    }
+AA.namespace("models");
+_.extend(AA.models, {
+    Identity: Backbone.Model.extend({
+        urlRoot: 'identities',
+	    url : function() {
+            return this.isNew() ? this.urlRoot : this.urlRoot + '/' + this.id;
+        }
+    })
 });

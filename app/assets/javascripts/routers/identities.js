@@ -1,18 +1,19 @@
-var Identities = Backbone.Router.extend({
+AA.namespace("router");
+_.extend(AA.router, {
+    Router: Backbone.Router.extend({
+        routes: {
+            "": "index",
+        },
 
-  routes: {
-    "": "index",
-  },
-
-  index: function() {
-    $.getJSON('/identities', function(data) {
-      if(data) {
-        var identities = _(data).map(function(i) { return new Identity(i); });
-        new App.Views.Index({ documents: documents });
-      } else {
-        new Error({ message: "Error loading documents." });
-      }
-    });
-  },
-  
+        index: function() {
+            $.getJSON('/identities', function(data) {
+                if(data) {
+                    var identities = _(data).map(function(i) { return new Identity(i); });
+                    new App.Views.Index({ documents: documents });
+                } else {
+                    new Error({ message: "Error loading documents." });
+                }
+            });
+        }
+    })
 });
