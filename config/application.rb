@@ -1,15 +1,17 @@
 require File.expand_path('../boot', __FILE__)
 
-# Pick the frameworks you want:
-# require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "active_resource/railtie"
 require "rails/test_unit/railtie"
+require "sprockets/railtie"
 
-# If you have a Gemfile, require the gems listed there, including any gems
-# you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env) if defined?(Bundler)
+if defined?(Bundler)
+  # If you precompile assets before deploying to production, use this line
+  Bundler.require *Rails.groups(:assets => %w(development test))
+  # If you want your assets lazily compiled in production, use this line
+  # Bundler.require(:default, :assets, Rails.env)
+end
 
 module Adjutant
   class Application < Rails::Application
@@ -35,13 +37,6 @@ module Adjutant
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    # Please note that JavaScript expansions are *ignored altogether* if the asset
-    # pipeline is enabled (see config.assets.enabled below). Put your defaults in
-    # app/assets/javascripts/application.js in that case.
-    #
-    # JavaScript files you want as :defaults (application.js is always included).
-    # config.action_view.javascript_expansions[:defaults] = %w(prototype prototype_ujs)
-
     config.generators do |g|
       g.helper              false
       g.integration_tool    false # cucumber if it had matching generators
@@ -58,8 +53,5 @@ module Adjutant
 
     # Enable the asset pipeline
     config.assets.enabled = true
-    #config.assets.paths << "#{Rails.root}/app/assets/fonts"
-    
-    config.mongoid.preload_models = true
   end
 end

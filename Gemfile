@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.0.rc8'
 gem 'resque'
 
-#gem 'sprockets', '2.0.0.beta10'
+gem 'sprockets'
 gem 'handlebars_assets'
 
 gem 'bson_ext'

@@ -21,8 +21,13 @@ Adjutant::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
-  
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-  
-end
 
+  # Do not compress assets
+  config.assets.compress = false
+
+  # Allow pass debug_assets=true as a query parameter to load pages with unpackaged assets
+  config.assets.allow_debugging = true
+
+  # Expands the lines which load the assets
+  config.assets.debug = true
+end
