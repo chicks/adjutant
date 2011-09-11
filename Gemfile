@@ -1,10 +1,10 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc4'
+gem 'rails', '3.1.0.rc8'
 gem 'resque'
 
-gem 'sprockets', '2.0.0.beta10'
-gem 'handlebars-rails'
+#gem 'sprockets', '2.0.0.beta10'
+gem 'handlebars_assets'
 
 gem 'bson_ext'
 gem 'mongoid', :git => 'git://github.com/mongoid/mongoid.git'
@@ -30,7 +30,8 @@ end
 group :development, :test do
   gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'capybara'
-  gem 'cucumber-rails'
+  gem 'cucumber', :git => 'https://github.com/cucumber/cucumber.git'
+  gem 'cucumber-rails', :git => 'https://github.com/cucumber/cucumber-rails.git'
   gem 'mongoid-rspec'
   gem 'rspec-rails'
   gem 'fabrication'
