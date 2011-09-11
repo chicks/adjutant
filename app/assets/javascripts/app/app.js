@@ -1,8 +1,10 @@
-if (typeof AA == "undefined")  {
-    AA = {
-        namespace: function (ns) {
-            this[ns] = this[ns] || {};
-            return this[ns];
-        }
-    };
-}
+var Adjutant = {
+  Views: {},
+  Routers: {},
+  Collections: {},
+  init: function() {
+    new Adjutant.Routers.Identities();
+    Backbone.history.start({pushState: true, root: "/dashboard"});
+  }
+};
+
