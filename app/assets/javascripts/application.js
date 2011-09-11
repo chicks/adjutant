@@ -3,6 +3,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require handlebars
 //= require ./lib/underscore
 //= require ./lib/backbone
 //= require_tree ./app

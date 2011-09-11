@@ -4,6 +4,7 @@ gem 'rails', '3.1.0.rc4'
 gem 'resque'
 
 gem 'sprockets', '2.0.0.beta10'
+gem 'handlebars-rails'
 
 gem 'bson_ext'
 gem 'mongoid', :git => 'git://github.com/mongoid/mongoid.git'
