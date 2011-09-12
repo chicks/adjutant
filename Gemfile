@@ -5,6 +5,7 @@ gem 'resque'
 
 gem 'sprockets'
 gem 'handlebars_assets'
+gem 'execjs', :git => 'git://github.com/sstephenson/execjs.git'
 
 gem 'bson_ext'
 gem 'mongoid', :git => 'git://github.com/mongoid/mongoid.git'
