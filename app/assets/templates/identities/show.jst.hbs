@@ -1,8 +1,8 @@
-{{#each identities}}<tr>
-	<td>{{this.attributes.user_name}}</td>
-	<td>{{this.attributes.identity_provider.name}}</td>
+{{#eachModel identities}}<tr>
+	<td>{{this.user_name}}</td>
+	<td>{{this.identity_provider.name}}</td>
 	<td>Yes (hardcoded)</td>
-	<td>{{this.attributes.sync_time}}</td>
+	<td>{{this.sync_time}}</td>
 	<td>sync_img</td>
 </tr>
-{{/each}}
+{{/eachModel}}
