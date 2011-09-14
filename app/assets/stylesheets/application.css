@@ -177,3 +177,7 @@ p.help {
 .hidden {
   display: none;
 }
+
+.sync_link:hover {
+  cursor:pointer;
+}
