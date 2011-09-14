@@ -13,7 +13,7 @@ module Adapter
     
       def change_password(endpoint, user_name, password)
         auth = {
-          :method => endpoint[:auth_method], 
+          :method   => endpoint[:auth_method], 
           :username => endpoint[:auth_user_name], 
           :password => endpoint[:auth_password]
         }

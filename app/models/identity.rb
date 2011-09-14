@@ -1,6 +1,7 @@
 class Identity
-  @queue = :passwords
+  include ActionView::Helpers::DateHelper
   include Mongoid::Document
+  @queue = :passwords
   field :user_name
   field :sync_time, type: DateTime
   field :sync_status
@@ -20,6 +21,10 @@ class Identity
   
   def provider
     identity_provider.name
+  end
+  
+  def sync_time
+   time_ago_in_words(read_attribute :sync_time) + " ago"
   end
   
 end
