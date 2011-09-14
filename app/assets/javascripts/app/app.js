@@ -7,4 +7,3 @@ var Adjutant = {
     Backbone.history.start({pushState: true, root: "/dashboard"});
   }
 };
-
