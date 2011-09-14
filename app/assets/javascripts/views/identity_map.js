@@ -5,7 +5,6 @@ Adjutant.Views.IdentityMap = Backbone.View.extend({
   },
   
   render: function() {
-    $(this.el).html(JST['identities/show']());
-    $('#imjs').html(this.el);
+    $('#identities_contents').html(JST['identities/show']())
   }
 });
