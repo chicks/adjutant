@@ -1,1 +1,8 @@
-OMG HAI!
+{{#each identities}}<tr>
+	<td>{{this.attributes.user_name}}</td>
+	<td>{{this.attributes.identity_provider.name}}</td>
+	<td>Yes (hardcoded)</td>
+	<td>{{this.attributes.sync_time}}</td>
+	<td>sync_img</td>
+</tr>
+{{/each}}
