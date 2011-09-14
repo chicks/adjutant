@@ -17,4 +17,11 @@ Handlebars.registerHelper("eachModel", function(context, block) {
   }
 
   return ret;
-})
+});
+
+Handlebars.registerHelper("ajaxlink", function(text, action) {
+  var ret;
+  
+  ret = "<a class='sync_link " + action + "'>" + text + "</a>";
+  return ret;
+});
