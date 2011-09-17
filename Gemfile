@@ -31,8 +31,8 @@ end
 group :development, :test do
   gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'capybara'
-  gem 'cucumber', :git => 'https://github.com/cucumber/cucumber.git'
-  gem 'cucumber-rails', :git => 'https://github.com/cucumber/cucumber-rails.git'
+  gem 'cucumber'
+  gem 'cucumber-rails'
   gem 'mongoid-rspec'
   gem 'rspec-rails'
   gem 'fabrication'

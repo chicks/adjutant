@@ -6,25 +6,27 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Daley', city: cities.first)
 u   = FactoryGirl.create(:user)
-i1  = FactoryGirl.create(:identity)
-i2  = FactoryGirl.create(:identity, sync_time: 13.days.ago )
-i3  = FactoryGirl.create(:identity, sync_time:  2.days.ago )
-c   = FactoryGirl.build(:context)
+c   = FactoryGirl.create(:context)
+u.contexts = [c]
+u.save
+
+i1  = FactoryGirl.build(:identity)
+i2  = FactoryGirl.build(:identity, sync_time: 13.days.ago )
+i3  = FactoryGirl.build(:identity, sync_time:  2.days.ago )
+
 ip1 = FactoryGirl.build(:identity_provider)
 ip2 = FactoryGirl.build(:identity_provider, name: "Intranet")
 ip3 = FactoryGirl.build(:identity_provider, name: "Wiki")
 
-u.identities = [i1, i2, i3]
-u.save
-
-i1.context = c
 i1.identity_provider = ip1
-i1.save
-
-i2.context = c
 i2.identity_provider = ip2
-i2.save
-
-i3.context = c
 i3.identity_provider = ip3
-i3.save
+
+c.identities = [i1, i2, i3]
+c.save
+
+# 
+# c.identities = [i1, i2, i3]
+# c.save
+# u.save
+# 

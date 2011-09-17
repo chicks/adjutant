@@ -23,26 +23,6 @@ GIT
     execjs (1.2.4)
       multi_json (~> 1.0)
 
-GIT
-  remote: https://github.com/cucumber/cucumber-rails.git
-  revision: 23e98e52beebbe96b285e6f64d6c7afd721d7d4d
-  specs:
-    cucumber-rails (1.0.3)
-      capybara (>= 1.1.1)
-      cucumber (~> 1.0.4)
-      nokogiri (>= 1.5.0)
-
-GIT
-  remote: https://github.com/cucumber/cucumber.git
-  revision: c41ac46812c9315a174da747d5aa98f4be340c1e
-  specs:
-    cucumber (1.0.4)
-      builder (>= 2.1.2)
-      diff-lcs (>= 1.1.2)
-      gherkin (~> 2.4.18)
-      json (>= 1.4.6)
-      term-ansicolor (>= 1.0.6)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -96,6 +76,16 @@ GEM
       execjs
     coffee-script-source (1.1.2)
     columnize (0.3.4)
+    cucumber (1.0.4)
+      builder (>= 2.1.2)
+      diff-lcs (>= 1.1.2)
+      gherkin (~> 2.4.18)
+      json (>= 1.4.6)
+      term-ansicolor (>= 1.0.6)
+    cucumber-rails (1.0.3)
+      capybara (>= 1.1.1)
+      cucumber (~> 1.0.4)
+      nokogiri (>= 1.5.0)
     database_cleaner (0.6.7)
     devise (1.4.5)
       bcrypt-ruby (~> 3.0)
@@ -109,7 +99,7 @@ GEM
       factory_girl (~> 2.1.0)
       railties (>= 3.0.0)
     ffi (1.0.9)
-    gherkin (2.4.18)
+    gherkin (2.4.21)
       json (>= 1.4.6)
     handlebars_assets (0.1.1)
       execjs
@@ -119,7 +109,7 @@ GEM
     jquery-rails (1.0.14)
       railties (~> 3.0)
       thor (~> 0.14)
-    json (1.5.4)
+    json (1.6.0)
     json_pure (1.5.4)
       spruz (~> 0.2.8)
     linecache19 (0.5.12)
@@ -236,8 +226,8 @@ DEPENDENCIES
   bson_ext
   capybara
   coffee-script
-  cucumber!
-  cucumber-rails!
+  cucumber
+  cucumber-rails
   database_cleaner
   devise
   devise_aes_encryptable!

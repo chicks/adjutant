@@ -6,8 +6,7 @@ class Identity
   field :sync_time, type: DateTime
   field :sync_status
   embeds_one :identity_provider
-  embeds_one :context
-  belongs_to :user
+  embedded_in :context
   
   def self.perform(id, password)
     i = Identity.find(id)

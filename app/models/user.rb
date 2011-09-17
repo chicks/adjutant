@@ -9,8 +9,8 @@ class User
   field :first_name
   field :last_name
   
-  has_many :identities
-
+  has_many :contexts
+  
   validates_presence_of :first_name, :last_name
   validates_uniqueness_of :email, :case_sensitive => false
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me
