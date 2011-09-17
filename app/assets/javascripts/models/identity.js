@@ -1,4 +1,6 @@
 var Identity = Backbone.Model.extend({
+  idAttribute: "_id",
+  
   url : function() {
     var base = 'identities';
     if (this.isNew()) return base;
