@@ -7,8 +7,9 @@
 //= require_tree ../templates
 //= require ./lib/underscore
 //= require ./lib/backbone
+//= require_tree ./hbhelpers
 //= require_tree ./app
 //= require_tree ./models
 //= require_tree ./collections
 //= require_tree ./views
-//= require_tree ./routers
+//= require_tree ./router
