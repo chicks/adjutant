@@ -13,7 +13,7 @@ Adjutant.Router = Backbone.Router.extend({
   	var contexts = new Adjutant.Collections.Contexts();
     
     // Create a Backbone View to handle new identity creation
-    this.newIDView = new Adjutant.Views.NewID({el: $("#add_identity_button")});
+    this.newIDView = new Adjutant.Views.NewID({el: $("#new_identity_form")});
     
     // Load the context data
     contexts.fetch({

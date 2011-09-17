@@ -13,12 +13,18 @@
         <a href="/help/password_sync">Learn more...</a>
       </p>
       <section id="new_identity_form" class="hidden">
-        <form id="" class="idForm">
-          <label for="name">Name:</label>
-          <input type="text" name="name" value="" id="name">
-
-          
-        </form>
+        <div class="info">
+          <h4>Create a New Identity</h4>
+          <form id="" class="idForm">
+            <label for="context">Context:</label>
+            <select name="context" id="context">
+              <option value="option1">Intranet</option>
+              <option value="option2">Active Directory</option>
+            </select>
+            <label for="username">User Name:</label>
+            <input type="text" name="username">
+          </form>
+        </div>
       </section>
       <section id="contexts">
       </section>  

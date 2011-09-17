@@ -12,6 +12,7 @@ Adjutant.Views.NewID = Backbone.View.extend({
   },
   
   showForm: function(e) {
+    this.el.slideToggle('fast');
     console.log("show the new form");
   },
 });
