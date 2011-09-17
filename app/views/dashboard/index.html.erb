@@ -3,7 +3,7 @@
     <article class="identity_map">
       <h1>Identities and Passwords</h1>
       <nav class="actions">
-        <%= link_to "New Identity", "#new_identity", id: "add_identity_button", class: "button" %>
+        <button type="button" class="button" id="add_identity_button">New Identity</button>
       </nav>
       <div class="clear"></div>
       <p class="help">
@@ -13,6 +13,12 @@
         <a href="/help/password_sync">Learn more...</a>
       </p>
       <section id="new_identity_form" class="hidden">
+        <form id="" class="idForm">
+          <label for="name">Name:</label>
+          <input type="text" name="name" value="" id="name">
+
+          
+        </form>
       </section>
       <section id="contexts">
       </section>  
