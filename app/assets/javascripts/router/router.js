@@ -3,8 +3,6 @@ Adjutant.Router = Backbone.Router.extend({
     "": "index",
   },
   
-  contextViews: {},
-  
   initialize: function() {
     _.bindAll(this);
     
@@ -13,16 +11,11 @@ Adjutant.Router = Backbone.Router.extend({
 
   index: function() {
   	var contexts = new Adjutant.Collections.Contexts();
-    var self = this;
     
     contexts.fetch({
-      success: function(collection) {
-        console.log(collection);
-        _.each(collection.models, function(context) {
-          console.log(context);
-          this.contextViews[context.id] = new Adjutant.Views.ContextMap({ el: $("#contexts"), context: context});
-        }, self);
-      },
+      success: _.bind(function(collection) {
+          this.contextViews = new Adjutant.Views.ContextMap({ el: $("#contexts"), context: collection});
+      }, this),
       error: function() { new Error({ message: "Error loading identities." }); }
     });
   }
