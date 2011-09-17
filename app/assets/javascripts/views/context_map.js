@@ -1,11 +1,20 @@
 Adjutant.Views.ContextMap = Backbone.View.extend({
+  identityViews: {},
+  
   initialize: function() {
-    this.context = this.options.context;
-    this.context.bind("change", this.render);
+    this.collection.bind("change", this.render);
+    
     this.render();
+    
+    _.each(this.collection.models, function(identity) {
+      this.identityViews[identity.id] = new Adjutant.Views.IdentityMap({el: $("#" + identity.id), collection: identity.get("identities")});
+    }, this);
   },
     
   render: function() {
-    this.el.html(JST['contexts/show']({context: this.context.models}))
+    // Pass in the identities
+    this.el.html(JST['contexts/show']({contexts: this.collection.models}))
+    
+    // 
   }
 });

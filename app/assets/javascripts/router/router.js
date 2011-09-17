@@ -14,7 +14,7 @@ Adjutant.Router = Backbone.Router.extend({
     
     contexts.fetch({
       success: _.bind(function(collection) {
-          this.contextViews = new Adjutant.Views.ContextMap({ el: $("#contexts"), context: collection});
+          this.contextViews = new Adjutant.Views.ContextMap({ el: $("#contexts"), collection: collection});
       }, this),
       error: function() { new Error({ message: "Error loading identities." }); }
     });

@@ -1,0 +1,18 @@
+{{#eachModel contexts}}
+<div>
+  <div class="context">{{name}}</div>
+</div>
+<table class="identities">
+  <thead>
+    <tr>
+      <th>User Name</th>
+      <th>Service</th>
+      <th>Password Linked?</th>
+      <th>Last Sync</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody class="identities_contents" id="{{_id}}">
+  </tbody>
+</table>
+{{/eachModel}}
