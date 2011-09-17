@@ -13,14 +13,9 @@
         <a href="/help/password_sync">Learn more...</a>
       </p>
       <section id="new_identity_form" class="hidden">
-        <%= form_for :identity do |f| %>
-          <span><%= f.label "Service" %></span><%= select_tag(:identity_provider, options_for_select(@identity_providers)) %>
-          <span><%= f.label :user_name %></span><%= f.text_field :user_name %>      
-        <% end %>
       </section>      
-      <% @identity_map.each_pair do |context, identities| -%>
       <ul class="context">
-        <li id="current_context"><%= context %></li>
+        <li id="current_context"></li>
       </ul>
         <table class="identities">
           <thead>
@@ -35,7 +30,6 @@
           <tbody id="identities_contents">
           </tbody>
         </table>          
-      <% end -%>
     </article>
   </div>
 </div>

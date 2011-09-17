@@ -28,15 +28,15 @@ class User
   def decrypted_password
     ::Devise::Encryptors::Aes256.decrypt(encrypted_password, Devise.pepper)
   end
-  
-  def flatten_identities
-    ids = {}
-    identities.each do |i|
-      ids[i.context.name] ||= []
-      ids[i.context.name] << i
-    end
-    ids
-  end
+  # 
+  # def flatten_identities
+  #   ids = {}
+  #   identities.each do |i|
+  #     ids[i.context.name] ||= []
+  #     ids[i.context.name] << i
+  #   end
+  #   ids
+  # end
   
   #def initialize_primary_context
   #  self.contexts << Context.create(name: "My Identities")
