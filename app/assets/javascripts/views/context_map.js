@@ -13,8 +13,6 @@ Adjutant.Views.ContextMap = Backbone.View.extend({
     
   render: function() {
     // Pass in the identities
-    this.el.html(JST['contexts/show']({contexts: this.collection.models}))
-    
-    // 
+    this.el.html(JST['contexts/show']({contexts: this.collection.models}));
   }
 });
